@@ -1,4 +1,4 @@
-# NossoJogo — Fase 3: personagens e equipamentos locais
+# Astrotnt — Fase 3: personagens e equipamentos locais
 
 Artilharia 2D original, 1v1 local, desenvolvida em Godot/GDScript sem assets externos ou plugins.
 Foco principal: Android Godot 4.7.2, Compatibility, resolução paisagem 1280×720.
