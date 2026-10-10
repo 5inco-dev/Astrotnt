@@ -1,0 +1,10 @@
+.godot/
+*.tmp
+*.bak
+export_credentials.cfg
+exports/
+.env
+.env.*
+*.key
+*.pem
+secrets/

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WeaponProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "lastro"
+title = "Lastro"
+min_speed = 240.0
+max_speed = 820.0
+charge_seconds = 1.8
+gravity = 800.0
+direct_damage = 32
+splash_max = 30
+splash_min = 6
+explosion_radius = 160.0
+crater_radius = 90.0
+projectile_size = 8.0
+tint = Color(1, 0.45, 0.2, 1)

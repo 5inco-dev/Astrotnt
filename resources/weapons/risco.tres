@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "risco"
+title = "Risco"
+min_speed = 450.0
+max_speed = 1300.0
+charge_seconds = 1.0
+gravity = 500.0
+wind_factor = 0.65
+direct_damage = 14
+splash_max = 10
+splash_min = 2
+explosion_radius = 70.0
+crater_radius = 36.0
+projectile_size = 3.0
+tint = Color(0.3, 1, 0.8, 1)

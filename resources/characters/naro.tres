@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/character_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "naro"
+title = "Naro"
+description = "Equilibrado: referência do combate."
+tint = Color(0.3,0.8,0.9,1)
+emblem = 0
+stats = {"hp": 100.0, "mobility": 180.0, "power": 100.0, "resistance": 0.0, "control": 0.0}

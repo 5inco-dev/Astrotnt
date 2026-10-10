@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "trinca"
+title = "Trinca"
+direct_damage = 12
+splash_max = 9
+splash_min = 2
+explosion_radius = 75.0
+crater_radius = 38.0
+projectile_count = 3
+spread = 5.0
+projectile_size = 4.0
+tint = Color(0.8, 0.5, 1, 1)

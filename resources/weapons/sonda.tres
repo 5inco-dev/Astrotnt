@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponProfile" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon_profile.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/penetrating_behavior.gd" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "sonda"
+title = "Sonda"
+direct_damage = 22
+splash_max = 20
+splash_min = 4
+explosion_radius = 95.0
+crater_radius = 48.0
+penetration = 40.0
+tint = Color(0.4, 0.7, 1, 1)
+behavior = ExtResource("2")
