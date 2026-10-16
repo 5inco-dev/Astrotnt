@@ -31,15 +31,15 @@ jobs:
           set -euo pipefail
           VERSION="4.7.2"
           STATUS="stable"
-          BASE="https://github.com/godotengine/godot-builds/releases/download/\${VERSION}-\${STATUS}"
-          curl -fL --retry 3 -o /tmp/godot.zip "\${BASE}/Godot_v\${VERSION}-\${STATUS}_linux.x86_64.zip"
-          curl -fL --retry 3 -o /tmp/templates.tpz "\${BASE}/Godot_v\${VERSION}-\${STATUS}_export_templates.tpz"
+          BASE="https://github.com/godotengine/godot-builds/releases/download/${VERSION}-${STATUS}"
+          curl -fL --retry 3 -o /tmp/godot.zip "${BASE}/Godot_v${VERSION}-${STATUS}_linux.x86_64.zip"
+          curl -fL --retry 3 -o /tmp/templates.tpz "${BASE}/Godot_v${VERSION}-${STATUS}_export_templates.tpz"
           unzip -q /tmp/godot.zip -d /tmp/godot
-          chmod +x /tmp/godot/Godot_v\${VERSION}-\${STATUS}_linux.x86_64
-          mkdir -p "$HOME/.local/share/godot/export_templates/\${VERSION}.\${STATUS}"
+          chmod +x /tmp/godot/Godot_v${VERSION}-${STATUS}_linux.x86_64
+          mkdir -p "$HOME/.local/share/godot/export_templates/${VERSION}.${STATUS}"
           unzip -q /tmp/templates.tpz -d /tmp/templates
-          cp -a /tmp/templates/templates/. "$HOME/.local/share/godot/export_templates/\${VERSION}.\${STATUS}/"
-          /tmp/godot/Godot_v\${VERSION}-\${STATUS}_linux.x86_64 --version
+          cp -a /tmp/templates/templates/. "$HOME/.local/share/godot/export_templates/${VERSION}.${STATUS}/"
+          /tmp/godot/Godot_v${VERSION}-${STATUS}_linux.x86_64 --version
 
       - name: Import project
         shell: bash
