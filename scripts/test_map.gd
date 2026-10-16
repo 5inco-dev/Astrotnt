@@ -9,19 +9,19 @@ func _ready() -> void:
 	# One continuous ground with walkable slopes, plus two elevated platforms.
 	add_surface(PackedVector2Array([Vector2(0,700), Vector2(620,700), Vector2(780,630),
 		Vector2(1040,630), Vector2(1220,700), Vector2(2000,700),
-		Vector2(2000,920), Vector2(0,920)]), Color("344a57"), true)
+		Vector2(2000,920), Vector2(0,920)]), Color("5a4130"), true)
 	add_surface(PackedVector2Array([Vector2(140,490), Vector2(350,490),
-		Vector2(350,514), Vector2(140,514)]), Color("46667a"), true)
+		Vector2(350,514), Vector2(140,514)]), Color("7c5a38"), true)
 	add_surface(PackedVector2Array([Vector2(1660,475), Vector2(1880,475),
-		Vector2(1880,499), Vector2(1660,499)]), Color("46667a"), true)
+		Vector2(1880,499), Vector2(1660,499)]), Color("7c5a38"), true)
 	add_surface(PackedVector2Array([Vector2(-40,-1200), Vector2(0,-1200),
-		Vector2(0,920), Vector2(-40,920)]), Color("233443"))
+		Vector2(0,920), Vector2(-40,920)]), Color("253437"))
 	add_surface(PackedVector2Array([Vector2(2000,-1200), Vector2(2040,-1200),
-		Vector2(2040,920), Vector2(2000,920)]), Color("233443"))
+		Vector2(2040,920), Vector2(2000,920)]), Color("253437"))
 
 	# Visible bedrock preserves the lower map boundary after deep excavation.
 	add_surface(PackedVector2Array([Vector2(0,920), Vector2(2000,920),
-		Vector2(2000,960), Vector2(0,960)]), Color("233443"))
+		Vector2(2000,960), Vector2(0,960)]), Color("253437"))
 
 func queue_explosion(point: Vector2, radius: float = CombatConfig.CRATER_RADIUS) -> void:
 	pending_explosions.append({"point": point, "radius": radius})

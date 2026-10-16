@@ -1,4 +1,6 @@
-# Astrotnt — Fase 3: personagens e equipamentos locais
+# FERRO-VELHO: GUERRA DE SOBRAS
+
+Versão de identidade visual e reforço de universo para o jogo local em Godot.
 
 Artilharia 2D original, 1v1 local, desenvolvida em Godot/GDScript sem assets externos ou plugins.
 Foco principal: Android Godot 4.7.2, Compatibility, resolução paisagem 1280×720.

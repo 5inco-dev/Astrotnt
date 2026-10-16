@@ -1,12 +1,25 @@
-; NossoJogo — combate local, Fase 1.
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
-config/name="NossoJogo — Fase 3"
+
+config/name="FERRO-VELHO: GUERRA DE SOBRAS"
 run/main_scene="res://scenes/main_menu.tscn"
-config/features=PackedStringArray("4.0", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [display]
+
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/window_width_override=1280
@@ -15,15 +28,16 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation="sensor_landscape"
 
+[input_devices]
+
+pointing/emulate_mouse_from_touch=false
+
+[physics]
+
+common/physics_interpolation=true
+
 [rendering]
+
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.055, 0.09, 0.15, 1)
-
-[physics]
-common/physics_ticks_per_second=60
-common/physics_interpolation=true
-
-[input_devices]
-pointing/emulate_mouse_from_touch=false
-pointing/emulate_touch_from_mouse=false

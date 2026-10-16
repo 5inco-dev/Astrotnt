@@ -18,7 +18,7 @@ func _ready() -> void:
 	add_child(root)
 	root.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
 	var background := ColorRect.new()
-	background.color = Color("0b1420")
+	background.color = Color("0b1113")
 	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	background.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(background)
@@ -28,17 +28,18 @@ func _ready() -> void:
 	root.add_child(content)
 	set_meta("content", content)
 	var title := Label.new()
-	title.text = "NOSSO JOGO"
+	title.text = "FERRO-VELHO"
 	title.add_theme_font_size_override("font_size", 56)
+	title.add_theme_color_override("font_color", Color("ffe195"))
 	title.position = Vector2(0, 150)
 	title.size = Vector2(1280, 70)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	content.add_child(title)
 	var subtitle := Label.new()
-	subtitle.text = "RETRO ARTILLERY · TURN-BASED COMBAT"
+	subtitle.text = "GUERRA DE SOBRAS • PLANETA DE LIXO"
 	subtitle.add_theme_font_size_override("font_size", 18)
-	subtitle.add_theme_color_override("font_color", Color("6f8aa3"))
+	subtitle.add_theme_color_override("font_color", Color("7bd2a8"))
 	subtitle.position = Vector2(0, 216)
 	subtitle.size = Vector2(1280, 30)
 	subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

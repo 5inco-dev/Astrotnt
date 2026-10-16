@@ -73,15 +73,23 @@ func cancel_input() -> void:
 		player.move_axis = 0.0
 
 func activate_turn(instant: bool = false) -> void:
+	if not is_instance_valid(turns) or players.is_empty():
+		return
 	cancel_input()
 	for index in range(players.size()):
-		players[index].active = index == turns.active_index
-	camera.follow(players[turns.active_index], instant)
+		if is_instance_valid(players[index]):
+			players[index].active = index == turns.active_index
+	if is_instance_valid(players[turns.active_index]):
+		camera.follow(players[turns.active_index], instant)
 	hud.set_controls_enabled(true)
 
 func _physics_process(delta: float) -> void:
-	var command := controls.consume()
+	if not is_instance_valid(turns) or players.size() < 2:
+		return
 	var player: CombatPlayer = players[turns.active_index]
+	if not is_instance_valid(player):
+		return
+	var command := controls.consume()
 	if turns.phase == TurnManager.Phase.AIMING and not hud.arsenal_open:
 		player.apply_command(command, delta)
 		if command.cancel:

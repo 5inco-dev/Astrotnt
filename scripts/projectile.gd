@@ -48,5 +48,25 @@ func resolve(collider: Object) -> void:
 	queue_free()
 
 func _draw() -> void:
-	draw_circle(Vector2.ZERO, profile.projectile_size + 4, Color(profile.tint, 0.2))
-	draw_circle(Vector2.ZERO, profile.projectile_size, profile.tint)
+	var palette := {
+		"pulso": {"body": Color("f3d974"), "detail": Color("f2a65a"), "glow": Color("ffe7a2")},
+		"lastro": {"body": Color("f59b4d"), "detail": Color("ff7143"), "glow": Color("ffd7a3")},
+		"risco": {"body": Color("7de3a6"), "detail": Color("324d48"), "glow": Color("dfffe9")},
+		"trinca": {"body": Color("bb8cf6"), "detail": Color("e6d4ff"), "glow": Color("f1d4ff")},
+		"sonda": {"body": Color("7bd1ff"), "detail": Color("1f7cb8"), "glow": Color("dff5ff")},
+	}
+	var weapon_style: Dictionary = palette.get(profile.id, {"body": Color("d7c49d"), "detail": Color("e0895d"), "glow": Color("ffe195")}) as Dictionary
+	var base: Color = profile.tint if profile.tint != Color.WHITE else Color(weapon_style["body"])
+	var glow: Color = Color(weapon_style["glow"])
+	var power := clampf(float(elapsed) / maxf(0.01, CombatConfig.SHOT_LIFETIME), 0.0, 1.0)
+	draw_circle(Vector2.ZERO, profile.projectile_size + 4.0, Color(base, 0.16))
+	draw_circle(Vector2.ZERO, profile.projectile_size, base)
+	draw_circle(Vector2.ZERO, maxf(2.0, profile.projectile_size * 0.4), glow)
+	if profile.id == "trinca":
+		draw_arc(Vector2.ZERO, profile.projectile_size + 6.0, 0.0, TAU, 12, Color(glow, 0.45), 2)
+	elif profile.id == "sonda":
+		draw_line(Vector2.ZERO, Vector2(0, -profile.projectile_size - 8.0), glow, 2)
+	elif profile.id == "lastro":
+		draw_circle(Vector2.ZERO, profile.projectile_size + 2.0, Color(base, 0.3))
+	if power > 0.75:
+		draw_circle(Vector2.ZERO, profile.projectile_size + 9.0, Color(glow, 0.12))
